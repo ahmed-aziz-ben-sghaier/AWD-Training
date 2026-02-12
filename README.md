@@ -1,37 +1,91 @@
-# Job Aboard - Microservices Training Project
+# Workshop 2 – Implémentation du serveur Eureka (Service Discovery)
 
-## 📌 About the Project
-**Job Aboard** is an **academic project** designed to help students **master microservices architecture** through a **30-hour hands-on training program**. The project focuses on building a **job listing management system** using a microservices approach.
-## 📌Project Architecture
-![](https://github.com/badi3a/JobBoard_Microservice/blob/main/documentation/diag/microservices-global-architecture.drawio%20(2).png)
+🎓 **Formation : Microservices**  
+📅 **Année universitaire : 2025–2026**  
+🧑‍💻 **Workshop 2**
 
-## 🎯 Main Goal
-The primary objective of this project is to provide students with:  
-✅ A **practical understanding** of microservices concepts.  
-✅ Experience in **service decomposition, inter-service communication, and scalability**.  
-✅ Hands-on training with **modern tools and frameworks** used in microservices development.
+---
 
-## 🛠️ Technologies & Concepts
-Throughout the training, students will work with:
-- **Spring Boot / Node.js** (for microservices implementation)
-- **API Gateway & Service Discovery**
-- **Message Brokers (Kafka, RabbitMQ, etc.)**
-- **Containerization (Docker, Kubernetes)**
-- **Database Management (SQL/NoSQL)**
-- **Security with Keycloak (Authentication & Authorization)**
-- **Frontend with Angular Framework**
+## 🎯 Objectif du workshop
 
-## 📅 Training Duration
-**30 hours** of guided learning and project development.
+L’objectif de ce workshop est de mettre en place un **serveur Eureka** afin de permettre la **découverte dynamique des microservices** dans une architecture distribuée.
 
-## 🚀 Learning Outcome
-By the end of this training, students will be able to **design, develop, and deploy scalable and secure microservices applications**, preparing them for real-world software architecture challenges.
+À la fin de ce workshop, l’étudiant sera capable de :
 
----  
----  
-## 🎓 Acknowledgment
-This project is part of the academic training provided by **ESPRIT School of Engineering**, aiming to equip students with industry-relevant skills in modern software development.
-## 👨‍🏫 Contact
-Connect with me on LinkedIn: [My LinkedIn Profile](https://www.linkedin.com/in/badiabouhdid/)
+- Comprendre le principe de **Service Discovery**
+- Créer et configurer un **Eureka Server**
+- Enregistrer des microservices comme **Eureka Clients**
+- Visualiser les instances enregistrées via l’interface Eureka
+- Comprendre le mécanisme d’enregistrement et de renouvellement des services
 
+---
 
+## 🧩 Architecture mise en place
+
+Dans ce workshop, nous mettons en place :
+
+- 🖥️ Un **Eureka Server**
+- 📦 Un ou plusieurs **microservices clients**
+- 🔁 Enregistrement automatique des services
+- 📊 Visualisation des instances via le dashboard Eureka
+
+---
+
+## 🛠️ Technologies utilisées
+
+- Java 17
+- Spring Boot
+- Spring Cloud Netflix Eureka
+- Maven
+- IntelliJ IDEA
+
+---
+
+## 📄 Énoncé du workshop
+
+L’énoncé détaillé du Workshop 2 est disponible au format PDF :
+
+👉 [Télécharger l’énoncé du Workshop 2](Atelier_Eureka server.pdf)
+
+---
+
+## 📝 Travail à faire (Homework)
+
+👉 Intégrer le serveur Eureka dans l’architecture existante contenant :
+
+- Microservice **Candidat**
+- Microservice **Job**
+- Gateway
+
+Chaque microservice doit :
+
+- Être enregistré automatiquement dans Eureka
+- Être visible dans le dashboard (http://localhost:8761)
+- Pouvoir être exécuté sur plusieurs instances (ports différents)
+
+---
+
+## ✅ Rendu attendu
+
+- Un projet **Eureka Server** fonctionnel
+- Les microservices configurés comme **Eureka Clients**
+- Enregistrement réussi des services dans le dashboard
+- Plusieurs instances visibles pour au moins un microservice
+- Code structuré et fonctionnel
+- Projet poussé sur **GitHub**
+
+---
+
+💡 **Conseil :**  
+Démarrez d’abord le serveur Eureka avant d’exécuter les microservices clients.
+
+🚀 Bon courage et bonne implémentation !
+
+---
+
+## 🏫 Cadre pédagogique
+
+### Enseignante : [Badia Bouhdid](https://www.linkedin.com/in/badiabouhdid)
+
+Ce workshop a été développé dans le cadre du module **Applications Web Distribuées**,  
+à l’**École d’Ingénieurs ESPRIT**.
