@@ -1,33 +1,39 @@
-# Workshop 2 – Implémentation du serveur Eureka (Service Discovery)
+# Workshop 3 – Implémentation de l’API Gateway
 
 🎓 **Formation : Microservices**  
 📅 **Année universitaire : 2025–2026**  
-🧑‍💻 **Workshop 2**
+🧑‍💻 **Workshop 3**
 
 ---
 
 ## 🎯 Objectif du workshop
 
-L’objectif de ce workshop est de mettre en place un **serveur Eureka** afin de permettre la **découverte dynamique des microservices** dans une architecture distribuée.
+L’objectif de ce workshop est de mettre en place une **API Gateway** jouant le rôle de point d’entrée unique vers les microservices.
 
 À la fin de ce workshop, l’étudiant sera capable de :
 
-- Comprendre le principe de **Service Discovery**
-- Créer et configurer un **Eureka Server**
-- Enregistrer des microservices comme **Eureka Clients**
-- Visualiser les instances enregistrées via l’interface Eureka
-- Comprendre le mécanisme d’enregistrement et de renouvellement des services
+- Comprendre le rôle d’une API Gateway dans une architecture microservices
+- Mettre en place une configuration **statique**
+- Mettre en place une configuration **dynamique avec Eureka**
+- Observer le mécanisme de **load balancing**
+- Comparer les approches statique et dynamique
 
 ---
 
 ## 🧩 Architecture mise en place
 
-Dans ce workshop, nous mettons en place :
+Dans ce workshop, nous mettons en œuvre :
 
-- 🖥️ Un **Eureka Server**
-- 📦 Un ou plusieurs **microservices clients**
-- 🔁 Enregistrement automatique des services
-- 📊 Visualisation des instances via le dashboard Eureka
+- 🖥️ Un **API Gateway**
+- 📦 Les microservices existants (Candidat, Job)
+- 🔁 Routage des requêtes via la Gateway
+- ⚖️ Load balancing automatique via Eureka
+
+L’API Gateway agit comme un **intermédiaire intelligent** qui :
+
+- Reçoit les requêtes clients
+- Sélectionne une instance disponible
+- Redirige la requête vers le microservice approprié
 
 ---
 
@@ -35,7 +41,8 @@ Dans ce workshop, nous mettons en place :
 
 - Java 17
 - Spring Boot
-- Spring Cloud Netflix Eureka
+- Spring Cloud Gateway
+- Spring Cloud Netflix Eureka Client
 - Maven
 - IntelliJ IDEA
 
@@ -43,41 +50,45 @@ Dans ce workshop, nous mettons en place :
 
 ## 📄 Énoncé du workshop
 
-L’énoncé détaillé du Workshop 2 est disponible au format PDF :
+L’énoncé détaillé du Workshop 3 est disponible au format PDF :
 
-👉 [Télécharger l’énoncé du Workshop 2](Atelier_Eureka server.pdf)
+👉 [Télécharger l’énoncé du Workshop 3](Implémentation API Gateway.pdf)
 
 ---
 
-## 📝 Travail à faire (Homework)
+## 📝 Travail à faire (Rendu)
 
-👉 Intégrer le serveur Eureka dans l’architecture existante contenant :
+- Implémenter une **configuration statique**
+- Implémenter une **configuration dynamique avec Eureka**
+- Activer les logs de routage
+- Identifier l’algorithme de load balancing utilisé
+- Tester l’algorithme **Random** uniquement pour le service Candidat
+- Comparer les deux approches (statique vs dynamique)
 
-- Microservice **Candidat**
-- Microservice **Job**
-- Gateway
+---
 
-Chaque microservice doit :
+## ⚖️ Comparaison des approches
 
-- Être enregistré automatiquement dans Eureka
-- Être visible dans le dashboard (http://localhost:8761)
-- Pouvoir être exécuté sur plusieurs instances (ports différents)
+| Approche | Utilise Eureka ? | Avantages | Inconvénients |
+|-----------|------------------|------------|---------------|
+| Dynamique (lb://service) | ✅ Oui | Pas besoin de connaître l’URL exacte, support multi-instances, load balancing automatique | Dépendance à Eureka |
+| Statique (uri http://...) | ❌ Non | Simple et rapide à configurer | Non adapté aux environnements dynamiques |
 
 ---
 
 ## ✅ Rendu attendu
 
-- Un projet **Eureka Server** fonctionnel
-- Les microservices configurés comme **Eureka Clients**
-- Enregistrement réussi des services dans le dashboard
-- Plusieurs instances visibles pour au moins un microservice
-- Code structuré et fonctionnel
+- Projet **API Gateway fonctionnel**
+- Routage correct vers les microservices
+- Intégration réussie avec Eureka
+- Load balancing observable en console
+- Code structuré et propre
 - Projet poussé sur **GitHub**
 
 ---
 
 💡 **Conseil :**  
-Démarrez d’abord le serveur Eureka avant d’exécuter les microservices clients.
+Démarrez toujours le serveur Eureka avant de lancer l’API Gateway et les microservices.
 
 🚀 Bon courage et bonne implémentation !
 
