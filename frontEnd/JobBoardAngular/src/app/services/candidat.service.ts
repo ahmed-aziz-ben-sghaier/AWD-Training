@@ -9,6 +9,8 @@ export class CandidatService {
   constructor(private http: HttpClient) { }
 
   public sayHello()  {
-     return this.http.get<string>(this.urlBackend+"hello")
+    return this.http.get(this.urlBackend + "hello", {
+      responseType: 'text'
+    });
   }
 }
